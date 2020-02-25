@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/static/js/jquery-3.4.1.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            alert("I Love You!")
+        })
+        function test(name) {
+            alert(name)
+        }
+    </script>
+
+</head>
+<body>
+
+    <div id="div1">
+        <table style="border-collapse: collapse; text-align: center" align="center" border="1px" width="400px" cellpadding="0px" cellspacing="0px">
+            <tr>
+                <td>id</td>
+                <td>姓名</td>
+                <td>pwd</td>
+                <td>操作</td>
+            </tr>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td id="td">{{ user.name }}</td>
+                <td>{{ user.pwd }}</td>
+                <td>
+                    <input type="button" value="删除" onclick="test('{{ user.name }}')">
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
